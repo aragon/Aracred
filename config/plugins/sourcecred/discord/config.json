@@ -3,8 +3,9 @@
     "channelWeightConfig": {
       "defaultWeight": 1,
       "weights": {
+        "878279972089917531": 2,
         "754897072255402086": 0,
-        "674689982279057418": 0.25,
+        "674689982279057418": 0,
         "847788340609810442": 0,
         "847787632406822913": 0,
         "852843404132089877": 0,
@@ -15,22 +16,24 @@
     "guildId": "672466989217873929",
     "includeNsfwChannels": false,
     "propsChannels": [
-      "821030627570090014"
+      "821030627570900140"
     ],
     "reactionWeightConfig": {
       "applyAveraging": false,
-      "defaultWeight": 1,
+      "defaultWeight": 0,
       "weights": {
-        "AragonProject:755882230001172581": 2,
-        "AragonRocket:755881825066418316": 2,
-        "aragon:695303348206960650": 2,
-        "👎": 0,
-        "💩": 0
+        "XP:878268398532960327": 3,
+        "AragonProject:755882230001172581": 1,
+        "AragonRocket:755881825066418316": 1,
+        "aragon:695303348206960650": 1
       }
     },
     "roleWeightConfig": {
-      "defaultWeight": 1,
+      "defaultWeight": 0,
       "weights": {
+        "877403178784677918": 0,
+        "877405809959632926": 1,
+        "877406398667968562": 1
       }
     }
   }
