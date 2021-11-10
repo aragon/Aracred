@@ -1,9 +1,6 @@
 {
   "intervalLength": "WEEKLY",
   "plugins": {
-    "sourcecred/github": [
-      {"startTime": "2021-08-09", "budget": 0}
-    ],
     "sourcecred/discord": [
       {"startTime": "2021-08-09", "budget": 100}
     ],
