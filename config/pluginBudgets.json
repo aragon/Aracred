@@ -2,13 +2,13 @@
   "intervalLength": "WEEKLY",
   "plugins": {
     "sourcecred/discord": [
-      {"startTime": "2021-08-09", "budget": 100}
+      {"startTime": "2021-08-09", "budget": 50}
     ],
     "sourcecred/discourse": [
-      {"startTime": "2021-08-09", "budget": 25}
+      {"startTime": "2021-08-09", "budget": 50}
     ],
     "sourcecred/initiatives": [
-      {"startTime": "2021-08-09", "budget": 75}
+      {"startTime": "2021-08-09", "budget": 100}
     ]
   }
 }
