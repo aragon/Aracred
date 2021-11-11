@@ -1,21 +1,13 @@
 [
   {
-    "type":"sourcecred/weights",
-    "version":"0.2.0"
+    "type": "sourcecred/weights",
+    "version": "0.2.0"
   },
   {
-    "edgeWeights":{},
-    "nodeWeights":{
-      "N\u0000sourcecred\u0000github\u0000COMMENT\u0000":0.5,
-      "N\u0000sourcecred\u0000github\u0000COMMIT\u0000": 1,
-      "N\u0000sourcecred\u0000github\u0000ISSUE\u0000":1,
-      "N\u0000sourcecred\u0000github\u0000PULL\u0000":16,
-      "N\u0000sourcecred\u0000github\u0000REVIEW\u0000":2,
-      "N\u0000sourcecred\u0000github\u0000REPO\u0000": 4,
-      "N\u0000sourcecred\u0000github\u0000USERLIKE\u0000BOT\u0000":1,
-
-      "N\u0000sourcecred\u0000github\u0000": 2.5,
-      "N\u0000sourcecred\u0000discord\u0000": 0.8
+    "edgeWeights": {},
+    "nodeWeights": {
+      "N\u0000sourcecred\u0000discord\u0000": 1.0,
+      "N\u0000sourcecred\u0000discourse\u0000": 1.0
     }
   }
 ]
