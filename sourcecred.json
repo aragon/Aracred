@@ -1,1 +1,3 @@
-/app/sourcecred.json
+{
+  "bundledPlugins": ["sourcecred/discord","sourcecred/discourse"]
+}
