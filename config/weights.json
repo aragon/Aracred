@@ -6,8 +6,8 @@
   {
     "edgeWeights": {},
     "nodeWeights": {
-      "N\u0000sourcecred\u0000discord\u0000": 1,
-      "N\u0000sourcecred\u0000discourse\u0000": 0.5
+      "N\u0000sourcecred\u0000discord\u0000": 1.0,
+      "N\u0000sourcecred\u0000discourse\u0000": 1.0
     }
   }
 ]
