@@ -11,7 +11,9 @@ cd Aracred
 git checkout gh-pages
 rm -rf /app/site/{output,data,config,sourcecred.json}
 cp -r /app/{output,data,config,sourcecred.json,package.json,yarn.lock} /app/site/
-cp -r /app/site/* ./site/ 
+cp -r /app/site/* ./ 
 
+git config --global user.email "arabot-1@aragon.org"
+git config --global user.name "Arabot-1"
 git commit -am "Update sourcecred"
 git push

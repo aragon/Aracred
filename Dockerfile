@@ -15,7 +15,7 @@ USER appuser
 WORKDIR /app
 
 COPY --chown=appuser:appuser . /app
-RUN chmod u+x /app/entrypoint.sh
+RUN chmod u+x /app/scripts/*.sh
 
 RUN yarn --frozen-lockfile --non-interactive
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["sh"]
