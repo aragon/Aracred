@@ -1,0 +1,35 @@
+name: Build Docker Image
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: ghcr.io/aragon/aracred
+          flavor: |
+            latest=${{ github.ref == 'refs/heads/main' }}
+          tags: |
+            type=ref,event=branch
+            type=sha,event=branch,prefix={{branch}}-,format=short
+            type=semver,pattern={{version}}
+      - name: Build
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
