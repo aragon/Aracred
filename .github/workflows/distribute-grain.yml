@@ -1,9 +1,9 @@
 name: Distribute Grain
 on:
   # A new Cred interval every Sunday. We'll distribute Grain 5 minutes
-  # after the new interval
+  # after the new interval at 0:05 UTC.
   schedule:
-    - cron: 5 0 * * 0 # 00:05 UTC, 16:05 PST
+    - cron: 5 0 * * 0 #
   push:
     branches:
       # allows us to test this workflow, or manually generate distributions
@@ -14,6 +14,9 @@ on:
 jobs:
   distribute-grain:
     runs-on: ubuntu-latest
+    timeout-minutes: 1440
+    env:
+      NODE_OPTIONS: --max_old_space_size=16384
     steps:
       - uses: actions/checkout@v2.3.4
 
