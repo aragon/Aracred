@@ -5,41 +5,70 @@ const Ledger = sc.ledger.ledger.Ledger;
 const G = sc.ledger.grain;
 
 const LEDGER_PATH = './../data/ledger.json';
-const addresses = require("./../payments/addresses.json");
-
+const ANT_TOKEN_ADDRESS = "0xa117000000f279d81a1d3cc75430faa017fa5a2e";
+const DISPERSE_CONTRACT_ADDRESS = "0xD152f549545093347A162Dce210e7293f1452150";
 const PAYMENT_ID = "01";
+
 
 (async function () {
     const ledgerJSON = (await fs.readFile(LEDGER_PATH)).toString();
     const ledger = Ledger.parse(ledgerJSON);
     const accounts = ledger.accounts();
 
-    const payments = {};
+    const recipients = [];
+    const values = [];
+    const sourcecredIds = [];
+
     let total = BigInt(0);
-    accounts.forEach(acc => {
 
-        const amountToMint = BigInt(acc.balance)
-        if (amountToMint > 0.0) {
-            console.log(BigInt(acc.balance))
-            name = acc.identity.name
-            if (name in addresses) {
-                payments[addresses[acc.identity.name]] = amountToMint.toString();
-                total += amountToMint;
-            } else
-                throw `Name "${name}" not found in addresses list.`;
+    activeAccounts = accounts.filter(acc => acc.active === true)
+
+    activeAccounts.forEach(acc => {
+
+        const amountToPay = BigInt(acc.balance)
+
+        if (amountToPay > 0.0) {
+            if (acc.payoutAddresses.size === 0) {
+                console.log(`MISSING PAYOUT ADDRESS for account ${acc.identity.id} (${acc.identity.name})...skipping`)
+            } else {
+                addr = acc.payoutAddresses.values().next().value
+
+                recipients.push(addr)
+                values.push(amountToPay.toString())
+                sourcecredIds.push(acc.identity.id)
+
+                total += amountToPay;
+
+                console.log(addr, amountToPay.toString());
+            }
         }
+
     });
+    
+    console.log(`Total: ${total} (${Number(total) / 10 ** 18} ANT)`);
 
-    console.log(`Total: ${total} (${total / BigInt(10 ** 18)} ANT)`);
-
-    fs.writeFile(`./../payments/payment_${PAYMENT_ID}.json`,
-        JSON.stringify({
-            "title": `Ambassador SourceCred Payment #${Number(PAYMENT_ID)}`,
-            "justification":
-                `Payment of SourceCred rewards to the ambassadors for their activities in the AN DAO amounting to ${total / BigInt(10 ** 18)} ANT for the weeks 38 to 47.`,
-            "externalContract" : "0xD152f549545093347A162Dce210e7293f1452150", // Disperse.app on mainnet
-            "token": "0xa117000000f279d81a1d3cc75430faa017fa5a2e", // ANT token
-            "recipients": Object.keys(payments),
-            "values": Object.values(payments)
-        }, null, 2));
+    writePaymentsFile(total, recipients, values, sourcecredIds, PAYMENT_ID);
 })();
+
+
+function writePaymentsFile(total, recipients, values, sourcecredIds, paymentId) {
+    const filename = `./../payments/payment_${paymentId}.json`
+
+    if (!fs.existsSync(filename)) {
+        fs.writeFile(filename,
+            JSON.stringify({
+                "title": `Ambassador SourceCred Payment #${Number(paymentId)}`,
+                "justification":
+                    `Payment of SourceCred rewards to the ambassadors for their activities in the AN DAO amounting to ${Number(total) / 10 ** 18} ANT for the weeks 38 to 47.`,
+                "externalContract": DISPERSE_CONTRACT_ADDRESS,
+                "token": ANT_TOKEN_ADDRESS,
+                "recipients": recipients,
+                "values": values,
+                "_sourcecredIds": sourcecredIds,
+                "_balancesUpdated" : false
+            }, null, 2)
+        );
+    } else {
+        throw Error('File exists already');
+    }
+}
