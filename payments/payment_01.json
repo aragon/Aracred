@@ -7,7 +7,7 @@
     "0xaf5a1F7fCeda39A76A68708700BC93ABff9952e3",
     "0x9aB3971e1b065701C72C5f3cAFbF33118dC51ae9",
     "0x489aDd7680605f6Fc4806595CD75E65D7F1675Eb",
-    "0x883753beab357a2c29f3766c6ad158e72a78ce51",
+    "0x883753Beab357A2c29f3766C6ad158e72A78ce51",
     "0x3d958C62b36e01018644538Bd1998C1E9BE1dDD8",
     "0x19075CdB05f3a4E2607F0C0F442B7F2769BB3e37",
     "0x51d505ee130ED41c107F1bdf62950573fF50D8C0",
@@ -42,5 +42,26 @@
     "899713797035715306",
     "74485357081019869056",
     "80337810235031344809"
-  ]
+  ],
+  "_sourcecredIds": [
+    "9NCNb7DpYzgjP7gzzKnAJw",
+    "9UNlfkjZYn21TDxWTW5NNg",
+    "Ol4jxtpwXAcEDvzJWWX0BA",
+    "an8Op1KP8vV279IdkO66Mw",
+    "DVy91QA9g8TmcJgHN3SKRg",
+    "L9yDlHLlDrYiEpWcXuNK7w",
+    "p2aoY8wRAaGzoVlH2qkhNw",
+    "xbqOF6FQFb0mQa5yZnNFAw",
+    "nlWT3QEVYn77Q4KUba9Cww",
+    "WAgfQR3p0WJXeSaAdxTq7A",
+    "EGIopGeVy9RqnVjwWAaPIw",
+    "pm8gRsPXaLwZJ2U89D1Arw",
+    "c6l3hXAA54QwaUQwfdxVow",
+    "TaARKz8MhJKzmVaaGUD8IA",
+    "gkartLPn7oh3vZxXIVwdEg",
+    "fdB74ZKzvqovbLdXBxEyqw",
+    "XdHo2iWFOsk7zMNzDQ2jSg",
+    "jyYsLGyeriE2iPm5XDaQwA"
+  ],
+  "_balancesUpdated": false
 }
