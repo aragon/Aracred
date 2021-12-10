@@ -2,6 +2,7 @@ node_modules/
 site/
 output/
 cache/
+*.bkp
 
 .env
 **/.DS_Store
