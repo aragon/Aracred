@@ -19,7 +19,7 @@ function writePaymentsFile(total, recipients, values, sourcecredIds, paymentId) 
                 "title": `Ambassador SourceCred Payment #${Number(paymentId)}`,
                 "justification":
                     "Payment of SourceCred rewards to the ambassadors for their activities in the AN DAO " +
-                    `amounting to ${Number(total) / 10 ** 18} ANT for the weeks 38 to 51.`,
+                    `amounting to ${Number(total) / 10 ** 18} ANT for the weeks 48 to 51.`,
                 "externalContract": DISPERSE_CONTRACT_ADDRESS,
                 "token": ANT_TOKEN_ADDRESS,
                 "recipients": recipients,
