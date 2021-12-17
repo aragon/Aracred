@@ -7,7 +7,7 @@ const ledger = Ledger.parse(fs.readFileSync(LEDGER_PATH, 'utf8'));
 
 const ANT_TOKEN_ADDRESS = "0xa117000000f279d81a1d3cc75430faa017fa5a2e";
 const DISPERSE_CONTRACT_ADDRESS = "0xD152f549545093347A162Dce210e7293f1452150";
-const PAYMENT_ID = "01";
+const PAYMENT_ID = "02";
 
 
 function writePaymentsFile(total, recipients, values, sourcecredIds, paymentId) {
@@ -18,7 +18,8 @@ function writePaymentsFile(total, recipients, values, sourcecredIds, paymentId) 
             JSON.stringify({
                 "title": `Ambassador SourceCred Payment #${Number(paymentId)}`,
                 "justification":
-                    `Payment of SourceCred rewards to the ambassadors for their activities in the AN DAO amounting to ${Number(total) / 10 ** 18} ANT for the weeks 38 to 47.`,
+                    "Payment of SourceCred rewards to the ambassadors for their activities in the AN DAO " +
+                    `amounting to ${Number(total) / 10 ** 18} ANT for the weeks 38 to 51.`,
                 "externalContract": DISPERSE_CONTRACT_ADDRESS,
                 "token": ANT_TOKEN_ADDRESS,
                 "recipients": recipients,

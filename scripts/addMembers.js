@@ -30,7 +30,7 @@ function addPayoutAddresses(accountName, payoutAddress) {
 }
 
 addresses = {
-    "Example-Account-Name": "0x0123456789abcdef0123456789abcdef01234567"
+    "freedomfighter": "0x14A2A72226f51bA42F359e12933F7259E5852813"
 }
 
 Object.entries(addresses).forEach(
