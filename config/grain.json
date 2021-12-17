@@ -8,7 +8,7 @@
     {
       "policyType": "BALANCED",
       "budget": 62,
-      "numIntervalsLookback": 8
+      "numIntervalsLookback": 12
     }
   ],
   "maxSimultaneousDistributions": 8
